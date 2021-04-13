@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body{background-color:darkgray;}
+        h1{ text-align:center;  }
+        p{ text-align:center;}
+        .view{ text-align:center;}
+
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+   
+
+    <script>
+        //model
+        let antpers = 0;
+        let fullt = '';
+
+
+        //view
+        Show()
+        function Show() {
+            document.getElementById('app').innerHTML = `
+        <h1>Covid-19 Counter</h1>
+        <p>Max 7 persjoner inne om gangen</p>
+        <div class=view>
+        <div>${antpers}</div>
+        <div>${fullt}</div>
+            <button onclick= "nyperson(1)">+</button>
+            <button onclick= "minus(1)">-</button>
+            <button onclick= "reset()">reset</button>
+       </div>` }
+
+
+
+
+
+
+        //controller
+
+        function nyperson(pers) {
+           
+            if (antpers >= 0 && antpers <= 6) {
+                antpers += pers
+            }
+            if (antpers == 6) {
+                Show()
+                return fullt = 'Butikken er nå full!'  
+            }
+            Show()
+        }
+
+        function minus(pers) {
+            if (antpers == 0) antpers = 0
+            else
+                antpers-= pers
+            fullt = ''
+            Show()
+        }
+        function reset() {
+            antpers = 0
+            fullt = ''
+            Show()
+        }
+
+
+    </script>
+</body>
+</html>

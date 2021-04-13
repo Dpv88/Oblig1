@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>QUnit Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+    <script src="utst.js"></script>
+    <script>
+        let antpers = 1;
+        let pers = 1;
+        function Show() { };
+        QUnit.test("nyperson", function (assert) {
+            nyperson(pers);
+            nyperson(pers);
+            nyperson(pers);
+            nyperson(pers);
+            nyperson(pers);
+            nyperson(pers);
+            nyperson(pers);
+            nyperson(pers);
+            nyperson(pers);
+            const actual = antpers;
+            const expected = 7;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("ikke", function (assert) {
+            minus(pers);
+            minus(pers);
+            minus(pers);
+            minus(pers);
+            minus(pers);
+            minus(pers);
+            minus(pers);
+            minus(pers);
+            minus(pers);
+            const actual = antpers;
+            const expected = 0;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("tull", function (assert) {
+           
+         
+            reset();
+
+            let actual = antpers;
+            let expected = 0;
+            assert.equal(actual,expected);
+        });
+
+
+      
+    </script>
+</body>
+</html>
